@@ -6,6 +6,7 @@ import functions_api as f
 
 app = Flask("api_neocamp_confort")
 
+#API POST to return rate comfort of all sensors combined
 @app.route("/", methods = ["POST"])
 def hello():
 	print(request.data)
