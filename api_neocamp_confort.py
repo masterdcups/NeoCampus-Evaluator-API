@@ -4,7 +4,7 @@ from flask import request
 import json
 import functions_api as f
 
-app = Flask("api_neocamp_confort")
+app = Flask("__main__")
 
 #API POST to return rate comfort of all sensors combined
 @app.route("/", methods = ["POST"])
@@ -20,7 +20,7 @@ def hello():
 	if "temperature" not in data:
 		return "Property missing : temperature",400
 
-	return jsonify({"value":f.annotationCapteur(data["luminosity"],data["humidity"],data["temperature"],data["co2"])})
+	return jsonify({"value":f.annotationCapteur(data["temperature"],data["luminosity"],data["co2"],data["humidity"])})
 
 #API POST to return the luminosity rate comfort
 @app.route("/luminosity", methods = ["POST"])
@@ -62,3 +62,5 @@ def temperat():
 
 	return jsonify({"value":f.temperature(data["temperature"])})
 
+if __name__ == '__main__':
+	app.run(debug=True)
