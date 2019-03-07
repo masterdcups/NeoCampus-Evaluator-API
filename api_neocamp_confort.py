@@ -1,6 +1,6 @@
 from flask import Flask
 from flask import jsonify
-from flask import request
+from flask import requests
 import json
 import functions_api as f
 
@@ -13,8 +13,8 @@ def hello():
 #API POST to return rate comfort of all sensors combined
 @app.route("/a", methods = ["POST"])
 def all_sensors():
-	print(request.data)
-	data = json.loads(request.data)
+	print(requests.data)
+	data = json.loads(requests.data)
 	if "luminosity" not in data:
 		return "Property missing : luminosity",400
 	if "humidity" not in data:
@@ -29,8 +29,8 @@ def all_sensors():
 #API POST to return the luminosity rate comfort
 @app.route("/luminosity", methods = ["POST"])
 def lumin():
-	print(request.data)
-	data = json.loads(request.data)
+	print(requests.data)
+	data = json.loads(requests.data)
 	if "luminosity" not in data:
 		return "Property missing : luminosity",400
 
@@ -39,8 +39,8 @@ def lumin():
 #API POST to return the humidity rate comfort
 @app.route("/humidity", methods = ["POST"])
 def humid():
-	print(request.data)
-	data = json.loads(request.data)
+	print(requests.data)
+	data = json.loads(requests.data)
 	if "humidity" not in data:
 		return "Property missing : humidity",400
 
@@ -49,8 +49,8 @@ def humid():
 #API POST to return the CO2 rate comfort
 @app.route("/co2", methods = ["POST"])
 def co2():
-	print(request.data)
-	data = json.loads(request.data)
+	print(requests.data)
+	data = json.loads(requests.data)
 	if "co2" not in data:
 		return "Property missing : co2",400
 
@@ -59,8 +59,8 @@ def co2():
 #API POST to return the temperature rate comfort
 @app.route("/temperature", methods = ["POST"])
 def temperat():
-	print(request.data)
-	data = json.loads(request.data)
+	print(requests.data)
+	data = json.loads(requests.data)
 	if "temperature" not in data:
 		return "Property missing : temperature",400
 
