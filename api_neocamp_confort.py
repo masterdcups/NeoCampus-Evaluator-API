@@ -6,9 +6,9 @@ import functions_api as f
 
 app = Flask("__main__")
 
-@app.route("/a", methods = ["POST"])
-def all_sensors():
-	print("hello world")
+@app.route("/")
+def hello():
+	return "hello world"
 
 #API POST to return rate comfort of all sensors combined
 @app.route("/a", methods = ["POST"])
