@@ -1,1 +1,1 @@
-worker: python api_neocamp_confort.py
+web gunicorn api_neocamp_confort:app
