@@ -6,9 +6,13 @@ import functions_api as f
 
 app = Flask("__main__")
 
+@app.route("/a", methods = ["POST"])
+def all_sensors():
+	print("hello world")
+
 #API POST to return rate comfort of all sensors combined
-@app.route("/", methods = ["POST"])
-def hello():
+@app.route("/a", methods = ["POST"])
+def all_sensors():
 	print(request.data)
 	data = json.loads(request.data)
 	if "luminosity" not in data:
