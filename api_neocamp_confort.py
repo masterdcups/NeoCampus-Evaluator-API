@@ -1,6 +1,7 @@
 from flask import Flask
 from flask import jsonify
 from flask import request
+from flask import render_template
 import json
 import functions_api as f
 
@@ -61,6 +62,11 @@ def temperat():
 		return "Property missing : temperature",400
 
 	return jsonify({"value":f.temperature(data["temperature"])})
+
+#API GET to return help webpage
+@app.route("/help")
+def help():
+	return render_template("help.html")
 
 if __name__ == '__main__':
 	app.run(debug=True)
