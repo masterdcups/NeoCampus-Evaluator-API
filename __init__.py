@@ -5,7 +5,7 @@ from flask import render_template
 import json
 import functions_api as f
 
-app = Flask("__main__", template_folder="/templates")
+app = Flask("__main__")
 
 #API POST to return rate comfort of all sensors combined
 @app.route("/", methods = ["POST"])
@@ -66,16 +66,7 @@ def temperat():
 #API GET to return help webpage
 @app.route("/help")
 def help():
-	return render_template("help.html", message="test")
+	return render_template("help.html")
 
 if __name__ == '__main__':
 	app.run(debug=True)
-
-
-
-
-
-
-
-
-
