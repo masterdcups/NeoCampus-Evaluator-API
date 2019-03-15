@@ -1,3 +1,5 @@
+# coding: utf-8
+
 """
 Annotation des données selon un seuil défini par les spécifications du Google doc suivant :
 https://docs.google.com/document/d/1vtwxloreLhoaFz1Pv8dX8Ovy9aDcBi80iWPXRxZvmLY/edit
