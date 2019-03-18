@@ -1,10 +1,11 @@
 from flask import Flask
 from flask import jsonify
 from flask import request
+from flask import render_template
 import json
 import functions_api as f
 
-app = Flask("__main__")
+app = Flask(__name__, template_folder="./templates")
 
 #API POST to return rate comfort of all sensors combined
 @app.route("/", methods = ["POST"])
@@ -62,5 +63,19 @@ def temperat():
 
 	return jsonify({"value":f.temperature(data["temperature"])})
 
+#API GET to return help webpage
+@app.route("/help")
+def help():
+	return render_template("help.html")
+
 if __name__ == '__main__':
 	app.run(debug=True)
+
+
+
+
+
+
+
+
+
